@@ -1,5 +1,3 @@
-#### Idea from: https://react-projects.netlify.app/
-#### Deployed on https://itsvick-react-birthday-reminder.netlify.app/
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

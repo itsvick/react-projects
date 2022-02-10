@@ -1,13 +1,132 @@
+:root {
+  --clr-gold: #c59d5f;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.underline {
+  background-color: var(--clr-gold);
+  height: 4px;
+  width: 60px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+li {
+  list-style: none;
+  margin: 0px 8px;
+}
+
+li:hover {
+  background-color: var(--clr-gold);
+  border-radius: 3px;
+  transform: scale(1.2);
+  color: #ffffff;
+}
+
+a:link,
+a:visited {
+  color: var(--clr-gold);
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+a:hover,
+a:active {
+  color: #ffffff;
+  background-color: var(--clr-gold);
+  transition: all 0.3s linear;
+}
+
+a:link.active,
+a:visited.active {
+  background-color: var(--clr-gold);
+  color: #ffffff;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: 16px 48px;
+}
+
+.card {
+  display: flex;
+  width: 600px;
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.card .card-image img {
+  width: 180px;
+  height: 140px;
+  border: solid 5px var(--clr-gold);
+}
+
+.info {
+  padding: 8px 16px;
+}
+
+.info h4 {
+  margin-top: 0;
+  text-transform: capitalize;
+  border-bottom: 1px dotted;
+  padding-bottom: 8px;
+}
+
+.info h4 .price {
+  float: right;
+  color: var(--clr-gold);
+}
+
+.desc {
+  color: #617d98;
+}
+
+@media all and (max-width: 600px) {
+  nav ul {
+    flex-wrap: wrap;
+  }
+
+  nav ul > li {
+    flex-basis: 50%;
+  }
+}
+
+@media all and (max-width: 300px) {
+  nav ul > li {
+    flex-basis: 100%;
+  }
 }

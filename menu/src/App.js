@@ -1,24 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import data from "./data";
+import MenuList from "./MenuList";
+import React, { useState } from "react";
 
 function App() {
+  const categories = ["all", ...new Set(data.map((item) => item.category))];
+  console.log("categories", categories);
+
+  const [activeCategory, setActiveCategory] = React.useState("all");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <main>
+      <header>
+        <h1>Our Menu</h1>
+        <div className="underline"></div>
+        <nav>
+          <ul>
+            {categories.map((item, index) => {
+              return (
+                <li key={index}>
+                  <a
+                    href="#"
+                    className={
+                      activeCategory === item
+                        ? "active text-capitalize"
+                        : "text-capitalize"
+                    }
+                    onClick={() => setActiveCategory(item)}
+                  >
+                    {item}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
       </header>
-    </div>
+      <MenuList activeCategory={activeCategory} menus={data} />
+    </main>
   );
 }
 
